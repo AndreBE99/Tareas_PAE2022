@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles-dev": "sass src/scss:assets/css --watch",
+    "styles": "sass src/scss:assets/css --no-source-map",
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "author": "",
   "license": "ISC"

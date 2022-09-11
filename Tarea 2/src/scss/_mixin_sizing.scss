@@ -1,0 +1,22 @@
+@import "variables";
+
+@mixin sm() {
+	@media screen and (min-width: $sizing-sm) {
+		@content;
+	}
+}
+@mixin md() {
+	@media screen and (min-width: $sizing-md) {
+		@content;
+	}
+}
+@mixin lg() {
+	@media screen and (min-width: $sizing-lg) {
+		@content;
+	}
+}
+@mixin xl() {
+	@media screen and (min-width: $sizing-xl) {
+		@content;
+	}
+}
