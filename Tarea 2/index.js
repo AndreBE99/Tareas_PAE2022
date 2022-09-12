@@ -8,11 +8,7 @@ app.set('view engine', 'handlebars');
 app.set('views', './views')
 app.use(express.static('public'));
 
-const rutasNoticias = require('./noticias/routes');
-app.use('/noticias', rutasNoticias);
-
 app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'index.html'))
   res.render('index', {title: 'Mis Noticias'});
 })
 
