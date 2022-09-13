@@ -1,7 +1,23 @@
-<h1>Las noticias de ahora</h1>
-<div class="container">
-
+<div class="container-search">
+    <h1>Las noticias de ahora</h1>
+    <div class="form">
+        <form action="/search" method="get" class="searchbar">
+            <input type="text" name="query" id="" placeholder="Buscar noticia">
+            <button type="submit"><img src="../imgs/search icon.png" alt=""></button>
+        </form>
+    </div>
+    <div class="container-news">
+        {{#each articles}}
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="title-img" src="{{this.urlToImage}}" alt="{{this.title}}">
+                            <h4 class="card-title">{{this.title}}</h4>
+                            <p class="card-text">{{this.info}}</p>
+                            <a href="{{this.url}}" target="_blank">More about this!</a>
+                        </div>
+                    </div>
+                </div>
+        {{/each}}
+    </div>
 </div>
-{{!-- <div class="container-news">
-
-</div> --}}
