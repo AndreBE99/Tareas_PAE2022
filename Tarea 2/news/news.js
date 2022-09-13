@@ -13,9 +13,9 @@ async function getNews(req, res, next) {
 	} else {
 		url = `https://newsapi.org/v2/everything?q=${req.query['query']}&apiKey=${process.env.NEWS_API_KEY}`;
 	}
-    let resp = await fetch(url).then((resp) => {
-        return resp.json();
-    });
+	let resp = await fetch(url).then((resp) => {
+			return resp.json();
+	});
 	const articles = resp.articles;
 	req.params.articles = articles;
 
