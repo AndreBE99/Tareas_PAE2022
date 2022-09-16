@@ -99,6 +99,32 @@
 	}
 }
 
+.container-article {
+	background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0,8,51,0.9));
+	background-size: cover;
+
+	h1 {
+		text-align: center;
+		font-family: 'Times New Roman', Times, serif;
+		color: white;
+		font-size: 4em;
+		padding: 10px;
+	}
+
+	h2, p {
+		text-align: center;
+		font-family: 'Times New Roman', Times, serif;
+		color: white;
+	}
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+}
+
 @include sm() {
 	@for $i from 1 through $cols {
 		.col-sm-#{$i} {

@@ -17,14 +17,15 @@ async function getNews(req, res, next) {
         return resp.json();
     });
 	const articles = resp.articles;
+
 	req.params.articles = articles;
 
 	next();
 }
 
 // Empty get for search bar
-app.get('/', (req, res) => {
-	res.render('index');
+app.get('/', getNews, (req, res) => {
+	res.render('index', { articles: req.params.articles});
 });
 
 // Get with articles about query
@@ -34,6 +35,14 @@ app.get('/search', getNews, (req, res) => {
 	} else {
 		res.render('index', { articles: req.params.articles, query: req.query['query'] });
 	}
+});
+
+// Get with specific article
+app.get('/article', getNews, (req, res) => {
+	// req.params.articles.forEach((article, index) => {
+	// 	console.log(article.title);
+	// });
+	res.render('article', { article: req.params.articles[1]});
 });
 
 // New endpoint to get articles in a json format
