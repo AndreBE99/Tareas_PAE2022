@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class NoticiaDetailsComponent implements OnInit {
 
-  @Input('item') noticia: any = {}; // 'item' es un alias
+  @Input('item') noticia: any = {};
 
   @Output() onClear: EventEmitter<void> = new EventEmitter();
 

@@ -1,0 +1,7 @@
+<div class="noticias-list">
+  <ul>
+    <li *ngFor="let noticia of noticias" [ngClass]="{'active': noticia.active === true}">
+      <a (click)="selectNews(noticia)">{{ noticia.title }}</a>
+    </li>
+  </ul>
+</div>

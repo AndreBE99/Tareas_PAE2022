@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { NoticiaService } from 'src/app/shared/services/noticia.service';
 
 @Component({
@@ -10,21 +10,17 @@ export class NoticiasComponent implements OnInit {
 
   noticias: any = [];
   cargando: boolean = false;
-  zelda: string = 'http://google.com';
   search: string = '';
   lastSearch: string = '';
-
-  currentNews: any = {};
+  currentNew: any = {};
 
   constructor(private servicioDeNoticias: NoticiaService) { 
   }
 
   ngOnInit(): void {
-    
   }
 
   buscar(e?: any): void {
-    // console.log('Click event: ', e);
     this.cargando = true;
     this.servicioDeNoticias.getNoticias(this.search).subscribe({
       next: (response) => {
@@ -39,12 +35,12 @@ export class NoticiasComponent implements OnInit {
     })
   }
 
-  selectNews(noticia: any) {
-    this.currentNews = noticia;
+  assignNews(noticia: any) {
+    this.currentNew = noticia;
   }
 
   clearNews() {
-    this.currentNews = {};
+    this.currentNew = {};
   }
 
 }

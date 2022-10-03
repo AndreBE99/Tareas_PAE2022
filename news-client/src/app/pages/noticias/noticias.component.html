@@ -11,12 +11,11 @@
 
 <div class="panel">
   <div class="noticias-list">
-    <ul>
-      <li [ngClass]="{ active: currentNews === noticia }" *ngFor="let noticia of noticias"><a (click)="selectNews(noticia)">{{noticia.title}}</a></li>
-    </ul>
+    <app-noticia-list [list]="noticias" (currentNew)="assignNews($event)">
+    </app-noticia-list>
   </div>
   <div class="noticias-details">
-    <app-noticia-details [item]="currentNews" (onClear)="clearNews()">
+    <app-noticia-details [item]="currentNew" (onClear)="clearNews()">
     </app-noticia-details>
   </div>
 </div>
