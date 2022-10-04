@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class NoticiaListComponent implements OnInit {
 
   @Input('list') noticias: any = {};
+  thisNew: any;
   @Output() currentNew: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -18,6 +19,7 @@ export class NoticiaListComponent implements OnInit {
   selectNews(noticia: any) {
     noticia.active = true;
     this.currentNew.emit(noticia);
+    this.thisNew = noticia;
   }
 
 }

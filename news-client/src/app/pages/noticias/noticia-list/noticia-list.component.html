@@ -1,6 +1,6 @@
 <div class="noticias-list">
   <ul>
-    <li *ngFor="let noticia of noticias" [ngClass]="{'active': noticia.active === true}">
+    <li *ngFor="let noticia of noticias" [ngClass]="{'active': noticia === thisNew}">
       <a (click)="selectNews(noticia)">{{ noticia.title }}</a>
     </li>
   </ul>
