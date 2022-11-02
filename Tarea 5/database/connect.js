@@ -1,25 +1,29 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
-require('dotenv').config();
+const { MongoClient, ServerApiVersion } = require("mongodb");
+require("dotenv").config();
 
-const uri= process.env.DB_URL;
+//const uri = process.env.DB_URL;
+const uri =
+  "mongodb+srv://andre:andre@users.uf8khuh.mongodb.net/?retryWrites=true&w=majority";
 
-const client = new MongoClient(uri, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-    serverApi: ServerApiVersion.v1 
+//console.log("db", uri, process.env);
+
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1,
 });
 
 function connect() {
-    return new Promise((resolve, reject) => {
-        client.connect((err) => {
-            if(err) {
-                reject(err);
-           } else {
-            console.log('Connected successful')
-            resolve(client);
-           }
-          });     
+  return new Promise((resolve, reject) => {
+    client.connect((err) => {
+      if (err) {
+        reject(err);
+      } else {
+        console.log("Connected successful");
+        resolve(client);
+      }
     });
+  });
 }
 
 module.exports = connect;
